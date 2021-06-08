@@ -28,13 +28,11 @@ const App = () => {
 
     setCategories(updatedCategories);
   };
-
   const getCategories = async () => {
     let res = await axios.get("/categories");
     // let {data} = await axios.get('/categories')
     setCategories(res.data);
   };
-
   const deleteCategory = async (id) => {
     console.log(id);
     // delete from db
@@ -43,7 +41,6 @@ const App = () => {
     let updatedCategories = categories.filter((c) => c.id !== res.data.id);
     setCategories(updatedCategories);
   };
-
   const renderCategories = () => {
     if (categories.length == 0) {
       return <p>no categories</p>;
